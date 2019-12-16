@@ -30,11 +30,13 @@ function displayResult(computerMove, playerMove) {
 }
 
 function printMessage(msg) {
-    let div = document.createElement('div');
-    div.innerHTML = msg;
-    document.getElementById('messages').appendChild(div);
+	const div_messages = document.querySelector('#messages')
+    const new_div_messages = document.createElement('div')
+    new_div_messages.innerText = msg
+	div_messages.prepend(new_div_messages)
 }
 
 function clearMessages() {
-    document.getElementById('messages').innerHTML = '';
+    const div_messages = document.querySelector('#messages')
+    div_messages.innerText = ''
 }
